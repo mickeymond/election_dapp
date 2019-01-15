@@ -33,9 +33,11 @@ class Election extends Component {
     }
 
     async componentDidMount() {
-        // window.ethereum.on('accountsChanged', function (accounts) {
-        //     window.location.reload();
-        // });
+        if(window.ethereum) {
+            window.ethereum.on('accountsChanged', function (accounts) {
+                window.location.reload();
+            });
+        }
 
         const Election = this.props.drizzle.contracts.Election;
 
