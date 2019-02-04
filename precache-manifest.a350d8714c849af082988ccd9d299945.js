@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/election_dapp/static/css/1.9a855326.chunk.css"
   },
   {
-    "revision": "396f431d39be222e35de994b89a5bad8",
+    "revision": "5f148e1550bde6adeb2a2594c7b762c1",
     "url": "/election_dapp/index.html"
   }
 ];
