@@ -1,13 +1,14 @@
 {
-  "main.js": "/election_dapp/static/js/main.2d819848.chunk.js",
-  "main.js.map": "/election_dapp/static/js/main.2d819848.chunk.js.map",
-  "static/css/1.9a855326.chunk.css": "/election_dapp/static/css/1.9a855326.chunk.css",
-  "static/js/1.c5ca83d9.chunk.js": "/election_dapp/static/js/1.c5ca83d9.chunk.js",
-  "static/js/1.c5ca83d9.chunk.js.map": "/election_dapp/static/js/1.c5ca83d9.chunk.js.map",
+  "main.js": "/election_dapp/static/js/main.713cffd9.chunk.js",
+  "main.js.map": "/election_dapp/static/js/main.713cffd9.chunk.js.map",
+  "static/css/1.3a796847.chunk.css": "/election_dapp/static/css/1.3a796847.chunk.css",
+  "static/js/1.57e48a26.chunk.js": "/election_dapp/static/js/1.57e48a26.chunk.js",
+  "static/js/1.57e48a26.chunk.js.map": "/election_dapp/static/js/1.57e48a26.chunk.js.map",
   "runtime~main.js": "/election_dapp/static/js/runtime~main.bb4738c9.js",
   "runtime~main.js.map": "/election_dapp/static/js/runtime~main.bb4738c9.js.map",
-  "static/css/1.9a855326.chunk.css.map": "/election_dapp/static/css/1.9a855326.chunk.css.map",
+  "static/media/semantic.min.css": "/election_dapp/static/media/brand-icons.a1a749e8.svg",
+  "static/css/1.3a796847.chunk.css.map": "/election_dapp/static/css/1.3a796847.chunk.css.map",
   "index.html": "/election_dapp/index.html",
-  "precache-manifest.a350d8714c849af082988ccd9d299945.js": "/election_dapp/precache-manifest.a350d8714c849af082988ccd9d299945.js",
+  "precache-manifest.fc3f69580747a6980e3f96986239db7d.js": "/election_dapp/precache-manifest.fc3f69580747a6980e3f96986239db7d.js",
   "service-worker.js": "/election_dapp/service-worker.js"
 }
