@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/election_dapp/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "3189f6a0d59454537fc5",
-    "url": "/election_dapp/static/js/main.3189f6a0.chunk.js"
+    "revision": "ab6e4c3b81ad8d6ee726",
+    "url": "/election_dapp/static/js/main.ab6e4c3b.chunk.js"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
@@ -16,12 +16,12 @@ self.__precacheManifest = [
     "url": "/election_dapp/static/js/runtime~main.bb4738c9.js"
   },
   {
-    "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
-    "url": "/election_dapp/static/media/outline-icons.ef60a4f6.woff"
-  },
-  {
     "revision": "cd6c777f1945164224dee082abaea03a",
     "url": "/election_dapp/static/media/outline-icons.cd6c777f.woff2"
+  },
+  {
+    "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
+    "url": "/election_dapp/static/media/outline-icons.ef60a4f6.woff"
   },
   {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
@@ -64,12 +64,12 @@ self.__precacheManifest = [
     "url": "/election_dapp/static/media/brand-icons.13db00b7.eot"
   },
   {
-    "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
-    "url": "/election_dapp/static/media/outline-icons.82f60bd0.svg"
-  },
-  {
     "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
     "url": "/election_dapp/static/media/brand-icons.c5ebe0b3.ttf"
+  },
+  {
+    "revision": "82f60bd0b94a1ed68b1e6e309ce2e8c3",
+    "url": "/election_dapp/static/media/outline-icons.82f60bd0.svg"
   },
   {
     "revision": "57e48a2613df33d5cdb3",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/election_dapp/static/css/1.3a796847.chunk.css"
   },
   {
-    "revision": "365468387d512a7521223d89c5afff60",
+    "revision": "4eca372689dc5d8a9d62d5b127eee437",
     "url": "/election_dapp/index.html"
   }
 ];
