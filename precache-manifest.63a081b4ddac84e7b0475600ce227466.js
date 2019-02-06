@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/election_dapp/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "713cffd91896d44e0445",
-    "url": "/election_dapp/static/js/main.713cffd9.chunk.js"
+    "revision": "3189f6a0d59454537fc5",
+    "url": "/election_dapp/static/js/main.3189f6a0.chunk.js"
   },
   {
     "revision": "a1a749e89f578a49306ec2b055c073da",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/election_dapp/static/css/1.3a796847.chunk.css"
   },
   {
-    "revision": "3f4f6fd93c593d9cc7e789897f66d696",
+    "revision": "365468387d512a7521223d89c5afff60",
     "url": "/election_dapp/index.html"
   }
 ];
