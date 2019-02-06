@@ -1,6 +1,6 @@
 {
-  "main.js": "/election_dapp/static/js/main.ab6e4c3b.chunk.js",
-  "main.js.map": "/election_dapp/static/js/main.ab6e4c3b.chunk.js.map",
+  "main.js": "/election_dapp/static/js/main.e016d0e2.chunk.js",
+  "main.js.map": "/election_dapp/static/js/main.e016d0e2.chunk.js.map",
   "static/css/1.3a796847.chunk.css": "/election_dapp/static/css/1.3a796847.chunk.css",
   "static/js/1.57e48a26.chunk.js": "/election_dapp/static/js/1.57e48a26.chunk.js",
   "static/js/1.57e48a26.chunk.js.map": "/election_dapp/static/js/1.57e48a26.chunk.js.map",
@@ -9,6 +9,6 @@
   "static/media/semantic.min.css": "/election_dapp/static/media/brand-icons.a1a749e8.svg",
   "static/css/1.3a796847.chunk.css.map": "/election_dapp/static/css/1.3a796847.chunk.css.map",
   "index.html": "/election_dapp/index.html",
-  "precache-manifest.7cf27d510aa79b5efde14574f39e65e6.js": "/election_dapp/precache-manifest.7cf27d510aa79b5efde14574f39e65e6.js",
+  "precache-manifest.477cde5fe2d7e3713ea06281238e86b5.js": "/election_dapp/precache-manifest.477cde5fe2d7e3713ea06281238e86b5.js",
   "service-worker.js": "/election_dapp/service-worker.js"
 }
