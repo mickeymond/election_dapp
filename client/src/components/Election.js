@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Divider, Container, Button, Header, Segment, Message , Dropdown, Table, Label } from 'semantic-ui-react';
+import toastr from 'toastr/build/toastr.min.js';
 
 class Election extends Component {
 
@@ -6,7 +8,7 @@ class Election extends Component {
 
     async vote(e) {
         e.preventDefault();
-        this.setState({ message: "Waiting for transaction!!!" });
+        this.props.showLoader();
 
         const Election = this.props.drizzle.contracts.Election;
         try {
@@ -14,13 +16,14 @@ class Election extends Component {
 
             window.location.reload();
         } catch (e) {
-            this.setState({ message: e.message });
+            this.props.hideLoader();
+            toastr.error(e.message);
         }
     }
 
     async endElection(e) {
         e.preventDefault();
-        this.setState({ message: "Waiting for transaction!!!" });
+        this.props.showLoader();
 
         const Election = this.props.drizzle.contracts.Election;
         try {
@@ -28,7 +31,8 @@ class Election extends Component {
 
             window.location.reload();
         } catch (e) {
-            this.setState({ message: e.message });
+            this.props.hideLoader();
+            toastr.error(e.message);
         }
     }
 
@@ -57,72 +61,89 @@ class Election extends Component {
     }
 
     renderCandidates() {
-        return this.state.candidates.map(each => {
+        return this.state.candidates.map(({ id, name, voteCount }) => {
             return (
-                <tr key={each.id}>
-                    <th scope="row">{each.id}</th>
-                    <td>{each.name}</td>
-                    <td>{each.voteCount}</td>
-                </tr>
+                <Table.Row key={id}>
+                    <Table.Cell>
+                    <Label ribbon>{id}</Label>
+                    </Table.Cell>
+                    <Table.Cell>{name}</Table.Cell>
+                    <Table.Cell>{voteCount}</Table.Cell>
+                </Table.Row>
             );
         });
     }
 
-    renderOptions() {
-        return this.state.candidates.map(each => <option key={each.id} value={each.id}>{each.name}</option>);
+    candidateOptions() {
+        return this.state.candidates.map(({ id, name }) => ({ key: id, value: id, flag: 'id', text: name }));
     }
 
     renderForm() {
-        if(this.state.hasVoted) {
-            return <p className="text-success"><strong>You have already casted your vote!!!</strong></p>
+        if(this.props.drizzleState.accounts[0] === this.state.ec) {
+            return <strong>EC cannot vote!!!</strong>;
+        } else if(this.state.hasVoted) {
+            return <strong>You have already casted your vote!!!</strong>;
         }
-
         return (
-            <form onSubmit={this.vote.bind(this)}>
-                <div className="input-group">
-                    <select
-                        required
-                        className="custom-select"
-                        value={this.state.for}
-                        onChange={(e) => this.setState({ for: e.target.value })}
-                    >
-                        <option value="" disabled>Please Choose A Candidate...</option>
-                        {this.renderOptions()}
-                    </select>
-                    <div className="input-group-append">
-                        <button className="btn btn-success" type="submit">Cast Vote</button>
-                    </div>
-                </div>
-            </form>
+            <Container>
+                <Segment>
+                    <Dropdown
+                        placeholder='Select A Candidate'
+                        onChange={(e, data) => this.setState({ for: data.value })}
+                        selection
+                        options={this.candidateOptions()}
+                    />
+                </Segment>
+                <Button
+                    disabled={this.state.for === '' ? true : false}
+                    primary
+                    onClick={this.vote.bind(this)}
+                >
+                    Cast Vote
+                </Button>
+            </Container>
         );
     }
     
     render() {
         return (
-            <div>
-                <h1 className="mb-3"><strong>BLOCKCHAIN VOTING APPLICATION</strong></h1>
-                <h5 className="mb-3 text-info">This is a prototype voting app running on the ethereum network.</h5>
-                <h5 className="mb-3">Election is managed by: <strong>{this.state.ec}</strong></h5>
-                {this.props.drizzleState.accounts[0] === this.state.ec ? <button onClick={this.endElection.bind(this)} className="mb-3 btn btn-danger">End Election</button> : ''}
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Vote Count</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.renderCandidates()}
-                    </tbody>
-                </table>
-                <hr />
-                    {this.props.drizzleState.accounts[0] === this.state.ec ? <p>EC cannot vote!!!</p> : this.renderForm()}
-                <hr />
-                <p>Your Account is: <strong>{this.props.drizzleState.accounts[0]}</strong></p>
-                <hr />
-                <p>{this.state.message}</p>
-            </div>
+            <Container textAlign="center">
+                <Segment>
+                    <Header as="h1">BLOCKCHAIN VOTING APPLICATION</Header>
+                </Segment>
+                <Divider />
+                <Message>
+                    <Message.Header>Election Manager</Message.Header>
+                    <p><strong>{this.state.ec}</strong></p>
+                </Message>
+                <Divider />
+                <Message>
+                    <Message.Header>Election Information</Message.Header>
+                    <p>This is a prototype voting app running on the <strong>ropsten</strong> ethereum network.</p>
+                </Message>
+                <Divider />
+                <Message>
+                    <Message.Header>Election Results</Message.Header>
+                    <Table celled>
+                        <Table.Header>
+                            <Table.Row>
+                                <Table.HeaderCell>ID</Table.HeaderCell>
+                                <Table.HeaderCell>Name</Table.HeaderCell>
+                                <Table.HeaderCell>Vote Count</Table.HeaderCell>
+                            </Table.Row>
+                        </Table.Header>
+                        <Table.Body>
+                            {this.renderCandidates()}
+                        </Table.Body>
+                    </Table>
+                </Message>
+                <Divider />
+                <Segment raised>
+                    {this.renderForm()}
+                </Segment>
+                <Divider />
+                <Segment raised>Your Account is: <strong>{this.props.drizzleState.accounts[0]}</strong></Segment>
+            </Container>
         );
     }
 }

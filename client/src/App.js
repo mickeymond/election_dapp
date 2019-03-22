@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { DrizzleContext } from 'drizzle-react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'semantic-ui-css/semantic.min.css'
+import 'toastr/build/toastr.min.css'
 
 import Election from './components/Election';
 import Spinner from './components/Spinner';
 
 class App extends Component {
 
-  state = { loading: true };
+  state = { loading: false };
 
   showLoader() {
     this.setState({ loading: true });
@@ -23,7 +24,7 @@ class App extends Component {
         {drizzleContext => {
           const { drizzle, drizzleState, initialized } = drizzleContext;
       
-          if (!initialized) {
+          if (!initialized || this.state.loading) {
             return (
               <div className="container text-center mt-5">
                 <Spinner />
